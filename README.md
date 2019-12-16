@@ -19,6 +19,8 @@ Slider : for show multi Image
 <br>
 Exoplayer : for play video and sound
 <br>
+HashTag : find all news contains with the hashtag you touch
+<br>
 Dynamic Description : description can contains text and image between text
 <br>
 Comments : users can send comment about the news
