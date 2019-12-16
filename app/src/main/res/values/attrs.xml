@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="textSize" format="dimension" />
+    <declare-styleable name="MaterialTabHost">
+
+        <!-- Custom attributes -->
+        <attr name="primaryColor" format="color" />
+        <attr name="accentColor" format="color" />
+        <attr name="textColor" />
+        <attr name="stripSize" format="dimension"/>
+
+
+    </declare-styleable>
+    <declare-styleable name="HashTagView">
+        <attr name="hashTagColor" />
+        <attr name="hastTagBackground" />
+        <attr name="atColor" />
+        <attr name="atBackground" />
+        <attr name="hashTagSize" />
+        <attr name="atSize" />
+        <attr name="trackHashTag" />
+        <attr name="trackAt" />
+        <attr name="boldHashTag" />
+        <attr name="boldAt" />
+        <attr name="italicHashTag" />
+        <attr name="italicAt" />
+        <attr name="underlineHashTag" />
+        <attr name="underlineAt" />
+        <attr name="fontName" />
+        <attr name="hashTagFont" />
+        <attr name="atFont" />
+        <attr name="ellipsize" format="boolean" />
+    </declare-styleable>
+
+
+</resources>

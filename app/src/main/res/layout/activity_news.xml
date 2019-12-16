@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.saeedbaharikhoob.testproject.viewmodel.NewsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.NewsActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="50dp"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:id="@+id/layoutSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp">
+
+                        <com.saeedbaharikhoob.testproject.utils.SliderViews
+                            android:id="@+id/slider"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/slider_shadow" />
+
+                        <LinearLayout
+                            android:id="@+id/indicator"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_alignParentBottom="true"
+                            android:clickable="false"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+                        android:id="@+id/player_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:focusable="true"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:id="@+id/imgLike"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:onClick="@{ ()-> item.onServerLikeClick()}"
+                            android:src="@drawable/ic_hurt_dark" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="@{item.getNewsRetro().title}"
+                            android:textColor="@color/generalText" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="right"
+                        android:text="@{item.getNewsRetro().writerName}"
+                        android:textColor="@color/generalText" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutItems"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                    <com.saeedbaharikhoob.testproject.utils.HashTagView
+                        android:id="@+id/txtHashtag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:paddingRight="12dp"
+                        android:paddingBottom="10dp"
+                        android:text="@{item.getNewsRetro().tags}"
+                        android:textColor="#343434"
+                        android:textSize="15sp"
+                        app:atColor="#ffff4444"
+                        app:atFont="mainfont.ttf"
+                        app:boldHashTag="true"
+                        app:hashTagColor="#5393f9"
+                        app:hashTagFont="mainfont.ttf"
+                        app:italicAt="true"
+                        app:trackAt="true"
+                        app:trackHashTag="true"
+                        app:underlineAt="true" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/listComment"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:clipToPadding="false"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="50dp"
+                        android:scrollbars="none" />
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSend"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/btnSend"
+                    android:onClick="@{ ()-> item.onServerAddCommentClick()}"
+                    android:textColor="@color/generalText" />
+
+                <EditText
+                    android:id="@+id/editComment"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="@string/hitEditComment"
+                    android:maxLength="300"
+                    android:textColor="@color/generalText"
+
+                    />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

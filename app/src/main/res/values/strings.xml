@@ -1,0 +1,25 @@
+<resources>
+    <string name="default_notification_channel_id">testproject</string>
+    <string name="channel_name">testproject</string>
+    <string name="invalid_username_password">Please provide a valid username and password.</string>
+    <string name="invalid_username_password_nickname">Please provide a username email and password and nickname.</string>
+    <string name="app_name">testproject</string>
+    <string name="hintForSearch">Enter title of news ...</string>
+    <string name="hitEditComment">Enter comment for this news ...</string>
+    <string name="btnSend">Send</string>
+    <string name="welcomeUser">Welcom</string>
+    <string name="btnLogin">Login</string>
+    <string name="RefreshLoginStatus">RefreshLoginStatus</string>
+    <string name="enter_username">Enter Username ...</string>
+    <string name="enter_password">Enter Password ...</string>
+    <string name="enter_nickname">Enter NickName ...</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="need_login">Need Login !</string>
+    <string name="error_min_five_character">Enter at least 5 character !</string>
+    <string name="news">News</string>
+    <string name="states">States</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="item"
+            type="com.saeedbaharikhoob.testproject.viewmodel.LoginViewModel" />
+        
+    </data>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="50dp"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+
+                    <EditText
+                        android:id="@+id/editUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
+                        android:gravity="left"
+                        android:hint="@string/enter_username"
+                        android:textColor="@color/generalText"
+
+                        />
+                    <EditText
+                        android:id="@+id/editPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:inputType="textPassword"
+                        android:imeOptions="actionDone"
+                        android:gravity="left"
+                        android:hint="@string/enter_password"
+                        android:textColor="@color/generalText"
+
+                        />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="@string/btnLogin"
+                        android:onClick="@{() -> item.onServerLoginClick()}"
+                        android:textColor="@color/generalText" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+</layout>

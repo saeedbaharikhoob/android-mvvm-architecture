@@ -1,0 +1,66 @@
+<layout>
+    <data>
+        <variable
+            name="fragmentItem"
+            type="com.saeedbaharikhoob.testproject.viewmodel.UserFragmentViewModel" />
+
+    </data>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/layoutLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:onClick="@{ () -> fragmentItem.onRegisterClick()}"
+                android:text="@string/register" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:onClick="@{ () -> fragmentItem.onLoginClick()}"
+                android:text="@string/login" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutLogout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welcomeUser"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/generalText" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:onClick="@{ () -> fragmentItem.onLogoutClick()}"
+                android:text="@string/logout" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
+</layout>
