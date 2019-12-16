@@ -27,6 +27,7 @@ Like : users can like news
 <br>
 You can find some sample for Firebase service too.
 <br>
+<br>
 #### The app has following packages:
 1. **model**: It contains all model in app.
 2. **di**: Dependency providing classes using Dagger2.
