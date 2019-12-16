@@ -7,7 +7,7 @@ This repository contains a detailed sample app that implements MVVM architecture
   <img src="http://saeedbaharikhoob.com/projects/mvvmSample/public/screenshot/search.jpg" width="200">
   <img src="http://saeedbaharikhoob.com/projects/mvvmSample/public/screenshot/news_details.jpg" width="200">
   <img src="http://saeedbaharikhoob.com/projects/mvvmSample/public/screenshot/news_details2.jpg" width="200">
-  <img src="http://saeedbaharikhoob.com/projects/mvvmSample/public/screenshot/news_hashtag.png" width="200">
+  <img src="http://saeedbaharikhoob.com/projects/mvvmSample/public/screenshot/news_hashtag.jpg" width="200">
 
 </p>
 <br>
