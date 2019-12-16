@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -84,6 +85,8 @@ public class NewsActivity extends AppCompatActivity implements NewsNavigator,OnH
     private Button btnSend;
     private EditText editComment;
     private HashTagView txtHashtag;
+    private TextView txtTitle;
+    private TextView txtWriterName;
     private ImageView imgLike;
     private boolean likeStatus;
 
@@ -101,6 +104,8 @@ public class NewsActivity extends AppCompatActivity implements NewsNavigator,OnH
         layoutSlider = activityNewsBinding.layoutSlider;
         editComment = activityNewsBinding.editComment;
         btnSend = activityNewsBinding.btnSend;
+        txtTitle = activityNewsBinding.txtTitle;
+        txtWriterName = activityNewsBinding.txtWriterName;
         slider = activityNewsBinding.slider;
         layoutItems = activityNewsBinding.layoutItems;
         indicator = activityNewsBinding.indicator;
@@ -223,6 +228,10 @@ public class NewsActivity extends AppCompatActivity implements NewsNavigator,OnH
 
         likeStatus = newsRetro.isLikeStatus();
         setLikeStatus(newsRetro.isLikeStatus());
+
+        txtTitle.setText(newsRetro.getTitle());
+        txtWriterName.setText(newsRetro.getWriterName());
+        txtHashtag.setText(newsRetro.getTags());
 
         if (newsId > 0) {
 

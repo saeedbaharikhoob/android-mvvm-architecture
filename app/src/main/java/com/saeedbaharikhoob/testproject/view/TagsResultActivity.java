@@ -46,6 +46,7 @@ public class TagsResultActivity extends AppCompatActivity implements TagsResultN
         listTagsResult.setLayoutManager(layoutManager);
         listTagsResult.setAdapter(searchAdapter);
         tagsResultViewModel.getHashtagPosts(txt, 0);
+        tagsResultViewModel.setNavigator(this);
 
     }
 

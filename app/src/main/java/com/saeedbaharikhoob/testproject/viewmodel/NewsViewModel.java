@@ -1,5 +1,8 @@
 package com.saeedbaharikhoob.testproject.viewmodel;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.ObservableField;
+
 import com.saeedbaharikhoob.testproject.model.retromodel.NewsRetro;
 import com.saeedbaharikhoob.testproject.utils.Account;
 import com.saeedbaharikhoob.testproject.utils.G;
@@ -11,16 +14,12 @@ import io.reactivex.schedulers.Schedulers;
 
 public class NewsViewModel extends BaseViewModel<NewsNavigator> {
 
-    private NewsRetro newsRetro;
 
     public void getNews(int newsId) {
         getCompositeDisposable().add(getWebservice().getNewsInfo(newsId, Account.getInstant(G.context).getUserId())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .subscribe(response -> {
-                    newsRetro = response;
-                    getNavigator().newsResult(response);
-                }, throwable -> getNavigator().handleError(throwable)));
+                .subscribe(response -> getNavigator().newsResult(response), throwable -> getNavigator().handleError(throwable)));
 
     }
 
@@ -46,10 +45,10 @@ public class NewsViewModel extends BaseViewModel<NewsNavigator> {
                 .subscribeOn(Schedulers.io())
                 .subscribe(response -> getNavigator().addLikeResult(response), throwable -> getNavigator().handleError(throwable)));
     }
-    public NewsRetro getNewsRetro()
-    {
-        return newsRetro;
-    }
+
+
+
+
     public void onServerLikeClick() {
         getNavigator().likePost();
     }
