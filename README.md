@@ -14,14 +14,19 @@ This repository contains a detailed sample app that implements MVVM architecture
 <br>
 This sample is a News app you can see alls news filter them with states and search between them by title and writers name .
 In news page you can see some example about :
+<br>
 Slider : for show multi Image
+<br>
 Exoplayer : for play video and sound
+<br>
 Dynamic Description : description can contains text and image between text
+<br>
 Comments : users can send comment about the news
+<br>
 Like : users can like news 
-
+<br>
 You can find some sample for Firebase service too.
-
+<br>
 #### The app has following packages:
 1. **model**: It contains all model in app.
 2. **di**: Dependency providing classes using Dagger2.
